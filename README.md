@@ -16,17 +16,36 @@ To implement univariate Linear Regression to fit a straight line using least squ
 ## Program
 ```
 
+import numpy as np
+import matplotlib.pyplot as plt
+X= np.array([0,1,2,3,4,5,6,7,8,9])
+Y= np.array([1,3,2,5,7,8,8,9,10,12])
+plt.scatter(X,Y)
+plt.show()
+X_Mean=np.mean(X)
+Y_Mean=np.mean(Y)
+num=0
+den=0
+for i in range(len(X)):
+    num+=(X[i]-X_Mean)*(Y[i]-Y_Mean)
+    den+=(X[i]-X_Mean)**2
 
-
-
-
-
+m=num/den
+b=Y_Mean-(m*X_Mean)
+print(f"Slope : {m}\nIntercept : {b}")
+Y_Pred=(m*X)+b
+print(f"Predicted values are : \n{Y_Pred}")
+plt.scatter(X,Y,color='Red')
+plt.plot(X,Y_Pred,color='Blue')
+plt.show()
 ```
 ## Output
-</br>
-</br>
-</br>
-</br>
+<img width="1763" height="872" alt="ex 9 - i" src="https://github.com/user-attachments/assets/01b3292b-344f-45c8-bb70-a1f9f7f0c819" />
+
+<img width="1682" height="610" alt="ex 9 - ii" src="https://github.com/user-attachments/assets/e106190e-e573-4bb6-99e6-2534d13d19a4" />
+
+<img width="1640" height="778" alt="ex 9 - iii" src="https://github.com/user-attachments/assets/3652a1b6-bb14-43a4-a79a-b2685cd64c77" />
+
 
 ## Result
 Thus the univariate Linear Regression was implemented to fit a straight line using least squares.
